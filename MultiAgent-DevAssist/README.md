@@ -33,12 +33,10 @@ MultiAgent-DevAssist/
 │   ├── agents/
 │   ├── services/
 │   └── main.py
-├── cpp_test/
 ├── static/
 │   ├── index.html
 │   ├── style.css
 │   └── script.js
-├── workspace/
 ├── .gitignore
 ├── README.md
 └── requirements.txt
