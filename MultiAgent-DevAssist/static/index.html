@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DevAssist IDE</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+
+        <div class="logo">
+            DevAssist
+        </div>
+
+        <div class="menu">
+
+            <button>File</button>
+            <button>Run</button>
+            <button>Debug</button>
+            <button>AI Assist</button>
+            <button>Settings</button>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN IDE -->
+    <main class="ide">
+
+        <!-- PROJECT EXPLORER -->
+        <aside class="sidebar">
+
+            <div class="panel-title">
+                PROJECT
+            </div>
+
+            <div class="project-name">
+                📁 MyProject
+            </div>
+
+            <button class="new-file-button" onclick="createNewFile()">＋ New File</button>
+
+            <div class="file active">
+                📄 main.py
+            </div>
+
+            <div class="file">
+                📄 test.py
+            </div>
+
+            <div class="file">
+                📄 README.md
+            </div>
+
+        </aside>
+
+
+        <!-- CODE EDITOR -->
+        <section class="editor-area">
+
+            <div class="editor-header">
+
+    <span id="fileName">main.py</span>
+
+    <select id="languageSelect" onchange="changeLanguage()">
+
+        <option value="python">Python</option>
+        <option value="java">Java</option>
+        <option value="cpp">C++</option>
+        <option value="javascript">JavaScript</option>
+
+    </select>
+
+</div>
+
+
+            <div class="requirement-section">
+
+    <label for="requirement">
+        Expected Behavior / Requirement
+    </label>
+
+    <textarea
+        id="requirement"
+        class="requirement-input"
+        spellcheck="false"
+        placeholder="Describe what the code is expected to do..."
+    ></textarea>
+
+</div>
+
+<textarea
+    id="code"
+    class="code-editor"
+    spellcheck="false"
+    placeholder="Write your code here..."
+>def calculate_total(price, quantity):
+    result = price * quantity
+    return result
+
+
+total = calculate_total(100, 5)
+
+print(total)</textarea>
+
+
+            <div class="editor-actions">
+    <button
+        id="runButton"
+        class="run-button"
+        onclick="runCode()">
+        ▶ Run
+    </button>
+
+    <button
+        id="testButton"
+        onclick="runTests()">
+        🧪 Run Tests
+    </button>
+
+    <button onclick="saveCurrentFile()">
+        💾 Save
+    </button>
+
+    <button onclick="openAI()">
+        🤖 AI Assist
+    </button>
+</div>
+
+        </section>
+
+
+        <!-- AI PANEL -->
+        <aside class="ai-panel">
+
+            <div class="panel-title">
+                AI ASSIST
+            </div>
+
+
+            <div class="ai-description">
+
+                Select an AI agent to analyze your code.
+
+            </div>
+
+
+            <div class="agent-options">
+
+                <button onclick="analyzeWithAgent('debug')">
+                    🐛 Debug
+                </button>
+
+                <button onclick="analyzeWithAgent('review')">
+                    🔍 Code Review
+                </button>
+
+                <button onclick="analyzeWithAgent('optimization')">
+                    ⚡ Optimize
+                </button>
+
+                <button onclick="analyzeWithAgent('documentation')">
+                    📚 Documentation
+                </button>
+
+                <button onclick="analyzeWithAgent('test')">
+                    🧪 Generate Tests
+                </button>
+
+                <button onclick="analyzeWithAgent('security')">
+                    🔐 Security Agent
+                </button>
+
+                <button onclick="analyzeWithAgent('complex')">
+                    🧠 Complex Analysis
+                </button>
+
+                
+
+            </div>
+
+
+            <div class="ai-chat">
+
+                <div class="chat-title">
+                    Ask DevAssist
+                </div>
+
+                <textarea
+                    id="aiRequest"
+                    placeholder="Ask something about your code..."
+                ></textarea>
+
+                <button onclick="askAI()">
+                    Send
+                </button>
+
+            </div>
+
+        </aside>
+
+    </main>
+
+
+    <!-- BOTTOM PANEL -->
+    <section class="bottom-panel">
+
+        <div class="bottom-tabs">
+
+            <button class="active">
+                TERMINAL
+            </button>
+
+            <button>
+                OUTPUT
+            </button>
+
+            <button>
+                TEST RESULTS
+            </button>
+
+            <button>
+                PROBLEMS
+            </button>
+
+        </div>
+
+
+        <div
+            id="terminalOutput"
+            class="terminal-output"
+        >
+            DevAssist Terminal
+
+            <br><br>
+
+            Ready.
+
+        </div>
+
+    </section>
+
+
+    <!-- AI REPORT -->
+    <section id="results" class="results hidden">
+
+    <div class="results-header">
+        <h2>AI Analysis</h2>
+
+        <button
+            class="back-to-code-button"
+            onclick="closeAIAnalysis()">
+            ✕ Back to Code
+        </button>
+    </div>
+
+    <div id="agents" class="agents"></div>
+
+    <div id="report" class="report"></div>
+
+</section>
+
+<button
+    id="viewAnalysisButton"
+    class="view-analysis-button hidden"
+    onclick="openLastAnalysis()">
+    📋 View Last Analysis
+</button>
+
+
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>

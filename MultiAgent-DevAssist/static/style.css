@@ -1,0 +1,798 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #1e1e1e;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+
+/* TOP BAR */
+
+.topbar {
+    height: 55px;
+    background: #181818;
+    border-bottom: 1px solid #333;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 20px;
+}
+
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    margin-right: 40px;
+}
+
+
+.menu {
+    display: flex;
+    gap: 5px;
+}
+
+
+.menu button {
+    background: transparent;
+    border: none;
+    color: #cccccc;
+
+    padding: 10px 15px;
+
+    cursor: pointer;
+}
+
+
+.menu button:hover {
+    background: #333;
+    color: white;
+}
+
+
+/* MAIN IDE */
+
+.ide {
+    height: calc(100vh - 250px);
+
+    display: grid;
+
+    grid-template-columns:
+        220px
+        1fr
+        300px;
+}
+
+
+/* PROJECT SIDEBAR */
+
+.sidebar {
+    background: #181818;
+
+    border-right: 1px solid #333;
+
+    padding: 15px;
+}
+
+
+.panel-title {
+    font-size: 12px;
+    font-weight: bold;
+
+    color: #999;
+
+    margin-bottom: 15px;
+}
+
+
+.project-name {
+    padding: 8px 5px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+
+.file {
+    padding: 8px 12px;
+
+    color: #cccccc;
+
+    cursor: pointer;
+
+    border-radius: 4px;
+}
+
+
+.file:hover {
+    background: #2a2a2a;
+}
+
+
+.file.active {
+    background: #333;
+    color: white;
+}
+
+
+/* EDITOR */
+
+.editor-area {
+    background: #1e1e1e;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.editor-header {
+    height: 40px;
+
+    background: #252526;
+
+    border-bottom: 1px solid #333;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 15px;
+
+    color: #ddd;
+}
+
+
+.language {
+    font-size: 12px;
+    color: #999;
+}
+
+
+.code-editor {
+    flex: 1;
+
+    width: 100%;
+
+    resize: none;
+
+    border: none;
+
+    outline: none;
+
+    background: #1e1e1e;
+
+    color: #d4d4d4;
+
+    padding: 20px;
+
+    font-family: Consolas, monospace;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+.editor-actions {
+    height: 55px;
+
+    background: #252526;
+
+    border-top: 1px solid #333;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px 15px;
+}
+
+
+.editor-actions button {
+    padding: 8px 16px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #333;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+.editor-actions button:hover {
+    background: #444;
+}
+
+
+.editor-actions .run-button {
+    background: #16825d;
+}
+
+
+.editor-actions .run-button:hover {
+    background: #1a9b70;
+}
+
+
+/* AI PANEL */
+
+.ai-panel {
+    background: #181818;
+
+    border-left: 1px solid #333;
+
+    padding: 15px;
+
+    overflow-y: auto;
+}
+
+
+.ai-description {
+    color: #aaa;
+
+    font-size: 13px;
+
+    margin-bottom: 15px;
+}
+
+
+.agent-options {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.agent-options button {
+    padding: 10px;
+
+    background: #252525;
+
+    border: 1px solid #3a3a3a;
+
+    border-radius: 5px;
+
+    color: #ddd;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+
+.agent-options button:hover {
+    background: #333;
+}
+
+
+/* CHAT */
+
+.ai-chat {
+    margin-top: 25px;
+
+    border-top: 1px solid #333;
+
+    padding-top: 20px;
+}
+
+
+.chat-title {
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+
+.ai-chat textarea {
+    width: 100%;
+
+    min-height: 80px;
+
+    resize: vertical;
+
+    background: #252525;
+
+    color: white;
+
+    border: 1px solid #444;
+
+    border-radius: 5px;
+
+    padding: 10px;
+
+    outline: none;
+}
+
+
+.ai-chat button {
+    margin-top: 8px;
+
+    padding: 8px 15px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #444;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+/* BOTTOM PANEL */
+
+.bottom-panel {
+    height: 195px;
+
+    background: #181818;
+
+    border-top: 1px solid #333;
+}
+
+
+.bottom-tabs {
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    padding-left: 10px;
+
+    border-bottom: 1px solid #333;
+}
+
+
+.bottom-tabs button {
+    background: transparent;
+
+    border: none;
+
+    color: #999;
+
+    padding: 10px 15px;
+
+    cursor: pointer;
+}
+
+
+.bottom-tabs button.active {
+    color: white;
+
+    border-bottom: 2px solid white;
+}
+
+
+.terminal-output {
+    padding: 15px;
+
+    font-family: Consolas, monospace;
+
+    color: #ccc;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* AI RESULTS */
+
+.results {
+    position: fixed;
+
+    left: 220px;
+
+    right: 300px;
+
+    bottom: 20px;
+
+    max-height: 70vh;
+
+    overflow-y: auto;
+
+    background: #252525;
+
+    border: 1px solid #444;
+
+    border-radius: 8px;
+
+    padding: 20px;
+
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+.agents {
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 20px;
+}
+
+
+.agent {
+    padding: 7px 12px;
+
+    background: #333;
+
+    border-radius: 15px;
+
+    font-size: 13px;
+}
+
+
+.report {
+    background: #1e1e1e;
+
+    padding: 20px;
+
+    border-radius: 5px;
+
+    white-space: pre-wrap;
+
+    line-height: 1.6;
+}
+
+#languageSelect {
+    background: #252526;
+    color: #cccccc;
+
+    border: 1px solid #444;
+
+    border-radius: 4px;
+
+    padding: 5px 10px;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+#languageSelect:hover {
+    background: #333;
+}
+
+.file {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.file-name {
+    flex: 1;
+    cursor: pointer;
+}
+
+.file-actions {
+    display: flex;
+    gap: 2px;
+}
+
+.file-actions button {
+    background: transparent;
+    border: none;
+    color: #aaa;
+    cursor: pointer;
+    padding: 2px 4px;
+    font-size: 12px;
+}
+
+.file-actions button:hover {
+    color: white;
+}
+
+.agent-results {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.agent-card {
+    background: #1e1e1e;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.agent-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.agent-card pre {
+    background: #111111;
+    border-radius: 5px;
+    padding: 12px;
+    color: #cccccc;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    font-family: Consolas, monospace;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.final-report {
+    margin-top: 20px;
+    background: #1e1e1e;
+    border: 1px solid #4a4a4a;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.final-report h3 {
+    margin-top: 0;
+    color: #ffffff;
+}
+
+.final-report pre {
+    white-space: pre-wrap;
+    color: #cccccc;
+    line-height: 1.5;
+}
+
+.apply-fix-button {
+    margin-top: 10px;
+    padding: 8px 14px;
+    background: #2d6a4f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.apply-fix-button:hover {
+    background: #3a805f;
+}
+
+.analysis-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.analysis-top h3 {
+    margin-bottom: 5px;
+}
+
+.analysis-top p {
+    margin: 0;
+    color: #aaa;
+}
+
+.back-to-code-button {
+    padding: 8px 14px;
+    background: #444;
+    color: white;
+    border: 1px solid #666;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.back-to-code-button:hover {
+    background: #555;
+}
+
+.apply-fix-button {
+    margin-top: 10px;
+    padding: 8px 14px;
+    background: #2d6a4f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.apply-fix-button:hover {
+    background: #3a805f;
+}
+
+.report-back-button {
+    margin-top: 15px;
+}
+
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.results-header h2 {
+    margin: 0;
+}
+
+.view-analysis-button {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+    padding: 10px 16px;
+
+    background: #3b3b3b;
+    color: white;
+
+    border: 1px solid #666;
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    z-index: 1000;
+}
+
+.view-analysis-button:hover {
+    background: #505050;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+.requirement-section {
+    margin-bottom: 15px;
+}
+
+.requirement-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.requirement-input {
+    width: 100%;
+    min-height: 70px;
+    resize: vertical;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.test-dashboard {
+    margin-top: 20px;
+}
+
+.test-status {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.test-status.success {
+    border: 1px solid #28a745;
+}
+
+.test-status.failure {
+    border: 1px solid #dc3545;
+}
+
+.test-status-icon {
+    font-size: 36px;
+}
+
+.test-status h2 {
+    margin: 0 0 5px 0;
+}
+
+.test-status p {
+    margin: 0;
+}
+
+.test-statistics {
+    display: grid;
+    grid-template-columns:
+        repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.test-stat {
+    padding: 18px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.test-stat-number {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.test-stat-label {
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+.individual-tests {
+    margin-top: 20px;
+}
+
+.individual-tests h3 {
+    margin-bottom: 10px;
+}
+
+.individual-test {
+    display: grid;
+    grid-template-columns:
+        30px 1fr auto;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.individual-test.passed {
+    border-left: 4px solid #28a745;
+}
+
+.individual-test.failed {
+    border-left: 4px solid #dc3545;
+}
+
+.individual-test strong {
+    font-size: 12px;
+}
+
+.pytest-details {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.pytest-details summary {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.pytest-details pre {
+    margin-top: 15px;
+    overflow-x: auto;
+} 
